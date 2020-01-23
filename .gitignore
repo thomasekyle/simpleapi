@@ -31,4 +31,6 @@ build/
 .vscode/
 
 ### Maven Wrapper Settings ###
-.mvn
+.mvn/
+mvnw
+mvnw.cmd
