@@ -1,4 +1,5 @@
-FROM alpine:edge
-RUN apk add --no-cache openjdk11
-COPY files/UnlimitedJCEPolicyJDK11/* \
-  /usr/lib/jvm/java-1.11-openjdk/jre/lib/security/
+FROM openjdk:11
+ARG JAR_FILE=target/*.jar
+RUN mkdir /apps
+COPY ${JAR_FILE} /apps/app.jar
+ENTRYPOINT ["java","-jar","/apps/app.jar"]
